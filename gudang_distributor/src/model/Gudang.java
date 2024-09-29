@@ -13,31 +13,31 @@ public class Gudang {
         daftarProduk.add(new Produk("Permen", 7500, 290));
     }
 
-    public void addProduct(Produk product) {
-        daftarProduk.add(product);
+    public void tambahProduk(Produk produk) {
+        daftarProduk.add(produk);
     }
 
-    public void removeProduct(String productName) {
-        daftarProduk.removeIf(product -> product.ambilNama().equalsIgnoreCase(productName));
+    public void hapusProduk(String namaProduk) {
+        daftarProduk.removeIf(produk -> produk.ambilNama().equalsIgnoreCase(namaProduk));
     }
 
-    public void displayAllProducts() {
+    public void tampilkanProduk() {
         if (daftarProduk.isEmpty()) {
             System.out.println("Gudang kosong.");
         } else {
             System.out.println("Daftar Produk di Gudang:");
-            for (Produk product : daftarProduk) {
-                product.tampilkanProduk();
+            for (Produk produk : daftarProduk) {
+                produk.tampilkanProduk();
                 System.out.println("-------------------");
             }
         }
     }
     
-    public void perbaruiProduk(String productName, double hargaBaru, int stokBaru) {
-        for (Produk product : daftarProduk) {
-            if (product.ambilNama().equalsIgnoreCase(productName)) {
-                product.aturHarga(hargaBaru);
-                product.aturStock(stokBaru);
+    public void perbaruiProduk(String namaProduk, double hargaBaru, int stokBaru) {
+        for (Produk produk : daftarProduk) {
+            if (produk.ambilNama().equalsIgnoreCase(namaProduk)) {
+                produk.aturHarga(hargaBaru);
+                produk.aturStok(stokBaru);
                 System.out.println("Produk berhasil diupdate.");
                 return;
             }

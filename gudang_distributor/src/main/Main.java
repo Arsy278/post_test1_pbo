@@ -12,7 +12,7 @@ public class Main {
         int choice;
         
         do {
-            System.out.println("===== Aplikasi Manajemen Gudang Distributor =====");
+            System.out.println("===== Sistem Manajemen Gudang Distributor =====");
             System.out.println("1. Tambah Produk");
             System.out.println("2. Tampilkan Semua Produk");
             System.out.println("3. Hapus Produk");
@@ -24,9 +24,9 @@ public class Main {
             
             switch (choice) {
                 case 1 -> tambahProduk(scanner);
-                case 2 -> gudang.displayAllProducts();
-                case 3 -> removeProduct(scanner);
-                case 4 -> updateProduct(scanner);
+                case 2 -> gudang.tampilkanProduk();
+                case 3 -> hapusProduk(scanner);
+                case 4 -> perbaruiProduk(scanner);
                 case 5 -> System.out.println("Keluar dari program.");
                 default -> System.out.println("Pilihan tidak valid.");
             }
@@ -37,31 +37,31 @@ public class Main {
     
     public static void tambahProduk(Scanner scanner) {
         System.out.print("Nama Produk: ");
-        String name = scanner.nextLine();
+        String nama = scanner.nextLine();
         System.out.print("Harga Produk: ");
-        double price = scanner.nextDouble();
+        double harga = scanner.nextDouble();
         System.out.print("Stok Produk: ");
-        int stock = scanner.nextInt();
+        int stok = scanner.nextInt();
         
-        Produk product = new Produk(name, price, stock);
-        gudang.addProduct(product);
+        Produk product = new Produk(nama, harga, stok);
+        gudang.tambahProduk(product);
         System.out.println("Produk berhasil ditambahkan.");
     }
     
-    public static void removeProduct(Scanner scanner) {
+    public static void hapusProduk(Scanner scanner) {
         System.out.print("Nama produk yang akan dihapus: ");
-        String name = scanner.nextLine();
-        gudang.removeProduct(name);
+        String nama = scanner.nextLine();
+        gudang.hapusProduk(nama);
         System.out.println("Produk berhasil dihapus.");
     }
     
-    public static void updateProduct(Scanner scanner) {
+    public static void perbaruiProduk(Scanner scanner) {
         System.out.print("Nama Produk yang akan diupdate: ");
-        String name = scanner.nextLine();
+        String nama = scanner.nextLine();
         System.out.print("Harga baru: ");
-        double price = scanner.nextDouble();
+        double harga = scanner.nextDouble();
         System.out.print("Stok baru: ");
-        int stock = scanner.nextInt();
-        gudang.perbaruiProduk(name, price, stock);
+        int stok = scanner.nextInt();
+        gudang.perbaruiProduk(nama, harga, stok);
     }
 }
