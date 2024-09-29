@@ -91,6 +91,7 @@ Pada menu awal, terdapat beberapa menu yang dapat dipilih yaitu tambah produk, t
 1. Tambah Produk
 
    - Pengguna dapat memilih opsi 1 untuk menambahkan produk baru dengan memasukkan nama produk, harga, dan stok.
+   
    ![image](https://github.com/user-attachments/assets/1dc8dda6-0201-451a-8582-5c99aadff973)
 
 2. Tampilkan Semua Produk
